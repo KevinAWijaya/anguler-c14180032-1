@@ -1,4 +1,25 @@
 <hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<p>Start editing to see some magic happen :)</p>
+<br>
+{{a + b}}
+<br>
+<input [(ngModel)]="a" type="text"/> + <input [(ngModel)]="b" type="text"/> = {{ a*1 + b*1 }}
+<br>
+<br>
+<div *ngFor="let fruit of item; let i = index">
+  {{i + 1}}. {{ fruit.nama }} = {{fruit.harga | currency:'Rp.'}} / {{fruit.satuan}}
+</div>
+<p *ngIf="tampil">bisa tampil</p>
+<p *ngIf="tampil; then templatetrue; else templatefalse"></p>
+
+<ng-template #templatetrue>
+  asd
+</ng-template>
+<ng-template #templatefalse>
+  asdasdasd
+</ng-template>
+
+<br>
+<button (click)="OPEN()">BUKA</button> {{tulisanopen}}
+
+<input (keyup)="onKey($event)"/> <p>{{values}} </p>
